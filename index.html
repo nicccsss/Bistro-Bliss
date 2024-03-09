@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSA4</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- font awesome cdn link  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+    
+    <style>
+		@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+	
+		.site-tsa4 {
+			padding: 0;
+			margin: 0;
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+		}
+
+		.container{
+			max-width: 1200px;
+			margin:0 auto;
+			padding:3rem 2rem;
+		 }
+		 
+		 .container .title{
+			font-size: 3.5rem;
+			color:#444;
+			margin-bottom: 3rem;
+			text-transform: uppercase;
+			text-align: center;
+		 }
+		 
+		 .container .products-container{
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+			gap:2rem;
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+			cursor: pointer;
+			transition: all 0.3s ease;
+		 }
+		 
+		 .container .products-container .product{
+			text-align: center;
+			background: #fff;
+			cursor: pointer;
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+			transition: all 0.3s ease;
+		 }
+		 
+		 .container .products-container .product:hover{
+			outline: .2rem solid #222;
+			outline-offset: 0;
+			transform: scale(1.05);
+		 }
+		 
+		 .container .products-container .product img{
+			width: 100%;
+			height: 200px;
+			object-fit: cover;
+		 }
+		 
+		 .container .products-container .product h3{
+			padding:.5rem 0;
+			font-size: 2rem;
+			color:#444;
+		 }
+		 
+		 .container .products-container .product:hover h3{
+			color:#a6776a;
+			font-weight: bold;
+		 }
+		 
+		 .container .products-container .product .price{
+			font-size: 2rem;
+			color:#444;
+		 }
+		 
+		 .products-preview{
+			position: absolute;
+			margin-top: 2rem;
+			top:0; left:0;
+			min-height: 100vh;
+			width: 100%;
+			background: rgba(0,0,0,.8);
+			display: none;
+			align-items: center;
+			justify-content: center;
+		 }
+		 
+		 .products-preview .preview{
+			display: none;
+			padding:2rem;
+			text-align: center;
+			background: #fff;
+			position: relative;
+			margin:1rem;
+			width: 80rem;
+		 }
+		 
+		 .products-preview .preview.active{
+			display: inline-block;
+		 }
+		 
+		 .products-preview .preview img{
+			height: 30rem;
+			width: 100%;
+			object-fit: cover;
+		 }
+		 
+		 .products-preview .preview .fa-times{
+			position: absolute;
+			top:1rem; right:1.5rem;
+			cursor: pointer;
+			color:#d8ae9c;
+			font-size: 4rem;
+		 }
+		 
+		 .products-preview .preview h3{
+			color:#9b6b43;
+			margin-top: 1rem;
+			padding:.5rem 0;
+			font-size: 3rem;
+			font-weight: bold;
+		 }
+		 
+		 .products-preview .preview p{
+			line-height: 1.5;
+			padding:1rem 0;
+			font-size: 1.6rem;
+			color:#777;
+		 }
+		
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+			background-image: url('images/bg.jpg');
+		}
+		
+		h1 {
+			margin: 0;
+			font-size: 80px;
+			color: #ffeadf;
+			text-align: center;
+			font-family: 'Courier New', Courier, monospace;
+		}
+		
+	</style>
+
+    <section class="site-tsa4">
+		<h1>Bistro Bliss</h1>
+
+		<div class="container">
+			<h3 class="title"> Restaurant Menu </h3>
+
+			<div class="products-container grid-cols-4 gap-4">
+
+				<div class="product" data-name="p-1">
+					<img src="images\img1.jpg" alt="">
+					<h3>Blissful Bistro Salad</h3>
+				</div>
+
+				<div class="product" data-name="p-2">
+					<img src="images\img2.jpg" alt="">
+					<h3>Blissful Bistro Chicken Sandwich</h3>
+				</div>
+
+				<div class="product" data-name="p-3">
+					<img src="images\img3.3.jpg" alt="">
+					<h3>Blissful Bistro Beef Bourguignon</h3>
+				</div>
+
+				<div class="product" data-name="p-4">
+					<img src="images\img4.jpg" alt="">
+					<h3>Blissful Bistro Chocolate Mousse</h3>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="products-preview">
+
+			<div class="preview" data-target="p-1">
+			   <i class="fas fa-times"></i>
+			   <img src="images\img1.1.jpg" alt="">
+			   <h3>Blissful Bistro Salad</h3>
+			   <p>A vibrant and refreshing salad that embodies the essence of Blissful Bistro's commitment to fresh, high-quality ingredients. Crisp mixed greens are adorned with colorful cherry tomatoes, crunchy cucumbers, creamy avocado slices, and tangy feta cheese. Tossed in a light vinaigrette dressing with hints of lemon and herbs, every bite of this salad is a burst of flavor and texture, promising a delightful culinary experience.</p>
+			</div>
+		 
+			<div class="preview" data-target="p-2">
+			   <i class="fas fa-times"></i>
+			   <img src="images\img2.jpg" alt="">
+			   <h3>Blissful Bistro Chicken Sandwich</h3>
+			   <p>A delectable sandwich that combines tender, grilled chicken breast with layers of savory goodness. Nestled between slices of freshly baked artisan bread, the succulent chicken is complemented by crisp lettuce, juicy tomato slices, and creamy avocado spread. Finished with a hint of zesty aioli and served with a side of golden fries, this sandwich is a satisfying choice for lunch or dinner at Blissful Bistro.</p>
+			</div>
+		 
+			<div class="preview" data-target="p-3">
+			   <i class="fas fa-times"></i>
+			   <img src="images\img3.jpeg" alt="">
+			   <h3>Blissful Bistro Beef Bourguignon</h3>
+			   <p>A classic French dish reimagined with the signature touch of Blissful Bistro. Tender chunks of slow-cooked beef are simmered in a rich and hearty sauce infused with red wine, aromatic herbs, and caramelized onions. Served atop a bed of buttery mashed potatoes, each spoonful of this comforting dish is a symphony of flavors and textures, evoking warmth and satisfaction with every bite.</p>
+			</div>
+		 
+			<div class="preview" data-target="p-4">
+			   <i class="fas fa-times"></i>
+			   <img src="images\img4.4.jpg" alt="">
+			   <h3>Blissful Bistro Chocolate Mousse</h3>
+			   <p>A decadent dessert that epitomizes indulgence and elegance. Silky-smooth chocolate mousse, made from the finest cocoa and cream, is luxuriously rich and velvety on the palate. Served in delicate glassware and garnished with a dollop of freshly whipped cream and a sprinkle of cocoa powder, this heavenly treat is the perfect finale to a memorable dining experience at Blissful Bistro.</p>
+			</div>
+		</div>
+	</section>
+
+    <script>
+        $(document).ready(function() {
+            $('.grid-item').click(function() {
+                var title = $(this).data('title');
+                var description = $(this).data('description');
+                $('.overlay-title').text(title);
+                $('.overlay-description').text(description);
+                $('.overlay').fadeIn();
+            });
+            $('.close').click(function() {
+                $('.overlay').fadeOut();
+            });
+            $('.main-menu').click(function() {
+                $('.grid-item').toggleClass('hide');
+            });
+        });
+
+        let preveiwContainer = document.querySelector('.products-preview');
+        let previewBox = preveiwContainer.querySelectorAll('.preview');
+
+        document.querySelectorAll('.products-container .product').forEach(product =>{
+        product.onclick = () =>{
+            preveiwContainer.style.display = 'flex';
+            let name = product.getAttribute('data-name');
+            previewBox.forEach(preview =>{
+            let target = preview.getAttribute('data-target');
+            if(name == target){
+                preview.classList.add('active');
+            }
+            });
+        };
+        });
+
+        previewBox.forEach(close =>{
+        close.querySelector('.fa-times').onclick = () =>{
+            close.classList.remove('active');
+            preveiwContainer.style.display = 'none';
+        };
+        });
+    </script>
+
+</body>
+</html>
